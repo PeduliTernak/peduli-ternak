@@ -4,8 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.peduliternak.databinding.ActivityMainBinding
-import com.example.peduliternak.databinding.ActivityRegisterBinding
-import com.example.peduliternak.view.register.RegisterActivity
+import com.example.peduliternak.view.welcome.WelcomeActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -16,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.login.setOnClickListener{
-            startActivity(Intent(this, RegisterActivity::class.java))
+            startActivity(Intent(this, WelcomeActivity::class.java))
         }
     }
 }
