@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PeduliTernak</string>
+    <string name="title_login_page">Kesejahteraan Ternak, Tertata dengan Peduli Ternak</string>
+    <string name="phone">No Telepon</string>
+    <string name="password">password</string>
+    <string name="login">Masuk</string>
+    <string name="next">Next</string>
+</resources>
