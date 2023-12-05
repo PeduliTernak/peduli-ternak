@@ -25,7 +25,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
-        android:text="PEDULI TERNAK"
+        android:text="Masuk"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -41,15 +41,17 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:text="@string/title_login_page"
+        android:text="Masukkan Data Diri Kamu !"
         android:textColor="@color/white"
         android:textSize="16sp"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
 
-<!--    <TextView-->
+
+    <!--    <TextView-->
 <!--        android:id="@+id/messageTextView"-->
 <!--        android:layout_width="0dp"-->
 <!--        android:layout_height="wrap_content"-->
