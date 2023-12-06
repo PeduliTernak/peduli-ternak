@@ -5,4 +5,5 @@
     <string name="password">password</string>
     <string name="login">Masuk</string>
     <string name="next">Next</string>
+    <string name="success_login">login berhasil</string>
 </resources>

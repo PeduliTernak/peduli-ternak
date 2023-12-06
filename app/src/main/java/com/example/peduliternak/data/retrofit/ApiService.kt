@@ -1,5 +1,6 @@
 package com.example.peduliternak.data.retrofit
 
+import com.example.peduliternak.data.pref.LoginData
 import com.example.peduliternak.data.pref.UserData
 import com.example.peduliternak.data.response.RegisterResponse
 import okhttp3.MultipartBody
@@ -22,12 +23,13 @@ interface ApiService {
         @Body userData: UserData
     ): RegisterResponse
 
-//    @FormUrlEncoded
-//    @POST("login")
-//    suspend fun login(
-//        @Field("email") email: String,
+
+    @POST("login")
+    suspend fun login(
+//        @Field("phone") email: String,
 //        @Field("password") password: String
-//    ): LoginResponse
+        @Body loginData: LoginData
+    ): RegisterResponse
 //
 //    @GET("stories")
 //    fun getStories(
