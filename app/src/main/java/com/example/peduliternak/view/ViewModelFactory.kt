@@ -6,15 +6,16 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.peduliternak.data.UserRepository
 import com.example.peduliternak.data.di.Injection
 import com.example.peduliternak.view.login.LoginViewModel
+import com.example.peduliternak.view.main.MainViewModel
 
 class ViewModelFactory(private val repository: UserRepository) : ViewModelProvider.NewInstanceFactory() {
 
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return when {
-//            modelClass.isAssignableFrom(MainViewModel::class.java) -> {
-//                MainViewModel(repository) as T
-//            }
+            modelClass.isAssignableFrom(MainViewModel::class.java) -> {
+                MainViewModel(repository) as T
+            }
 //            modelClass.isAssignableFrom(DetailViewModel::class.java) -> {
 //                DetailViewModel(repository) as T
 //            }

@@ -11,7 +11,7 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.lifecycleScope
-import com.example.peduliternak.MainActivity
+import com.example.peduliternak.view.main.MainActivity
 import com.example.peduliternak.R
 import com.example.peduliternak.data.pref.LoginData
 import com.example.peduliternak.data.pref.UserModel
