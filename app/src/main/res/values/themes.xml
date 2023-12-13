@@ -1,9 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.PeduliTernak" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.PeduliTernak" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimary">@color/yellow</item>
+        <item name="colorPrimaryVariant">@color/primary</item>
+        <item name="android:statusBarColor">@color/primary</item>
     </style>
 
     <style name="Theme.PeduliTernak" parent="Base.Theme.PeduliTernak" />
