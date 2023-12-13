@@ -38,6 +38,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+                <FrameLayout
+                    android:id="@+id/fragment_container2"
+                    android:layout_width="match_parent"
+                    android:layout_height="614dp"
+                    android:layout_marginTop="60dp">
+
+                </FrameLayout>
+
                 <com.google.android.material.bottomappbar.BottomAppBar
                     android:id="@+id/bottomAppBar"
                     android:layout_width="match_parent"

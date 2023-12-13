@@ -78,7 +78,7 @@ class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
     }
     private fun openFragment(fragment: Fragment){
         val fragmentTransaction: FragmentTransaction = fragmentManager. beginTransaction()
-        fragmentTransaction.replace(R.id.fragment_container, fragment)
+        fragmentTransaction.replace(R.id.fragment_container2, fragment)
         fragmentTransaction.commit()
     }
 }

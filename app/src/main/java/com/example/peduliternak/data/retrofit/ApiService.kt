@@ -2,6 +2,7 @@ package com.example.peduliternak.data.retrofit
 
 import com.example.peduliternak.data.pref.LoginData
 import com.example.peduliternak.data.pref.UserData
+import com.example.peduliternak.data.response.HistoryResponse
 import com.example.peduliternak.data.response.RegisterResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -30,6 +31,11 @@ interface ApiService {
 //        @Field("password") password: String
         @Body loginData: LoginData
     ): RegisterResponse
+
+    @GET("/api/prediction")
+    fun getHistory(
+        @Header("Authorization") token: String,
+    ): Call<HistoryResponse>
 //
 //    @GET("stories")
 //    fun getStories(

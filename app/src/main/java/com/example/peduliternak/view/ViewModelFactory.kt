@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.peduliternak.data.UserRepository
 import com.example.peduliternak.data.di.Injection
+import com.example.peduliternak.view.fragment.HistoryViewModel
 import com.example.peduliternak.view.login.LoginViewModel
 import com.example.peduliternak.view.main.MainViewModel
 
@@ -21,6 +22,9 @@ class ViewModelFactory(private val repository: UserRepository) : ViewModelProvid
 //            }
             modelClass.isAssignableFrom(LoginViewModel::class.java) -> {
                 LoginViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(HistoryViewModel::class.java) -> {
+                HistoryViewModel(repository) as T
             }
 //            modelClass.isAssignableFrom(AddStoryViewModel::class.java) -> {
 //                AddStoryViewModel(repository) as T
