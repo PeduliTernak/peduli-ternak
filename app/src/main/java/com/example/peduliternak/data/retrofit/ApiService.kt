@@ -3,6 +3,7 @@ package com.example.peduliternak.data.retrofit
 import com.example.peduliternak.data.pref.LoginData
 import com.example.peduliternak.data.pref.UserData
 import com.example.peduliternak.data.response.HistoryResponse
+import com.example.peduliternak.data.response.PredictResponse
 import com.example.peduliternak.data.response.RegisterResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -36,6 +37,14 @@ interface ApiService {
     fun getHistory(
         @Header("Authorization") token: String,
     ): Call<HistoryResponse>
+
+    @Multipart
+    @POST("/api/prediction")
+    suspend fun uploadImage(
+        @Header("Authorization") token: String,
+        @Part file: MultipartBody.Part,
+        @Part("gejala_matrix") description: RequestBody,
+    ): PredictResponse
 //
 //    @GET("stories")
 //    fun getStories(

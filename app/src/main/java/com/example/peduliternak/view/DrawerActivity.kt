@@ -51,7 +51,7 @@ class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         openFragment(HomeFragment())
 
         binding.fab.setOnClickListener{
-            Toast.makeText(this,"Opening Predict", Toast.LENGTH_SHORT).show()
+            openFragment(PredictFragment())
 
         }
     }

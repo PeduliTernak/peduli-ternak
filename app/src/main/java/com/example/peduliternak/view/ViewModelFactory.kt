@@ -5,7 +5,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.peduliternak.data.UserRepository
 import com.example.peduliternak.data.di.Injection
+import com.example.peduliternak.view.fragment.CameraViewModel
 import com.example.peduliternak.view.fragment.HistoryViewModel
+import com.example.peduliternak.view.fragment.PredictViewModel
 import com.example.peduliternak.view.login.LoginViewModel
 import com.example.peduliternak.view.main.MainViewModel
 
@@ -25,6 +27,12 @@ class ViewModelFactory(private val repository: UserRepository) : ViewModelProvid
             }
             modelClass.isAssignableFrom(HistoryViewModel::class.java) -> {
                 HistoryViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(PredictViewModel::class.java) -> {
+                PredictViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(CameraViewModel::class.java) -> {
+                CameraViewModel(repository) as T
             }
 //            modelClass.isAssignableFrom(AddStoryViewModel::class.java) -> {
 //                AddStoryViewModel(repository) as T

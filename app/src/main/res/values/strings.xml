@@ -11,4 +11,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="image">image</string>
+    <string name="camera">camera</string>
+    <string name="gallery">gallery</string>
+    <string name="upload">upload</string>
+    <string name="empty_image_warning">silahkan masukkan gambar terlebih dahulu</string>
 </resources>
