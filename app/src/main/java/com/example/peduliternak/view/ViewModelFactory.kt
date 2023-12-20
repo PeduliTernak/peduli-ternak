@@ -8,6 +8,8 @@ import com.example.peduliternak.data.di.Injection
 import com.example.peduliternak.view.fragment.CameraViewModel
 import com.example.peduliternak.view.fragment.HistoryViewModel
 import com.example.peduliternak.view.fragment.PredictViewModel
+import com.example.peduliternak.view.fragment.ProfileViewModel
+import com.example.peduliternak.view.fragment.ResultViewModel
 import com.example.peduliternak.view.login.LoginViewModel
 import com.example.peduliternak.view.main.MainViewModel
 
@@ -33,6 +35,12 @@ class ViewModelFactory(private val repository: UserRepository) : ViewModelProvid
             }
             modelClass.isAssignableFrom(CameraViewModel::class.java) -> {
                 CameraViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(ResultViewModel::class.java) -> {
+                ResultViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(ProfileViewModel::class.java) -> {
+                ProfileViewModel(repository) as T
             }
 //            modelClass.isAssignableFrom(AddStoryViewModel::class.java) -> {
 //                AddStoryViewModel(repository) as T

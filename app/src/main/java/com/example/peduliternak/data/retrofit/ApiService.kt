@@ -4,6 +4,7 @@ import com.example.peduliternak.data.pref.LoginData
 import com.example.peduliternak.data.pref.UserData
 import com.example.peduliternak.data.response.HistoryResponse
 import com.example.peduliternak.data.response.PredictResponse
+import com.example.peduliternak.data.response.ProfileResponse
 import com.example.peduliternak.data.response.RegisterResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -37,6 +38,11 @@ interface ApiService {
     fun getHistory(
         @Header("Authorization") token: String,
     ): Call<HistoryResponse>
+
+    @GET("/api/user")
+    fun getUser(
+        @Header("Authorization") token: String,
+    ): Call<ProfileResponse>
 
     @Multipart
     @POST("/api/prediction")

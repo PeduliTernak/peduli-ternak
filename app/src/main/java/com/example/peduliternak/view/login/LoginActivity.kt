@@ -18,6 +18,7 @@ import com.example.peduliternak.data.pref.UserModel
 import com.example.peduliternak.data.response.RegisterResponse
 import com.example.peduliternak.data.retrofit.ApiConfig
 import com.example.peduliternak.databinding.ActivityLoginBinding
+import com.example.peduliternak.view.DrawerActivity
 import com.example.peduliternak.view.ViewModelFactory
 import com.google.gson.Gson
 import kotlinx.coroutines.launch
@@ -72,7 +73,7 @@ class LoginActivity : AppCompatActivity() {
                         setTitle("Yeah!")
                         setMessage(getString(R.string.success_login))
                         setPositiveButton(getString(R.string.next)) { _, _ ->
-                            val intent = Intent(context, MainActivity::class.java)
+                            val intent = Intent(context, DrawerActivity::class.java)
                             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                             startActivity(intent)
                             finish()

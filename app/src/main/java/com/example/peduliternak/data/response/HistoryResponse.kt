@@ -11,10 +11,19 @@ data class HistoryResponse(
 	val status: Boolean? = null
 )
 
+data class Results(
+
+	@field:SerializedName("penyakit")
+	val penyakit: List<String?>? = null,
+
+	@field:SerializedName("penanganan")
+	val penanganan: List<String?>? = null
+)
+
 data class PredictionsItem(
 
 	@field:SerializedName("result")
-	val result: String? = null,
+	val result: Results? = null,
 
 	@field:SerializedName("imageUrl")
 	val imageUrl: String? = null,

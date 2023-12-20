@@ -149,6 +149,20 @@ class CameraFragment : Fragment() {
                         requestBody?.let { apiService.uploadImage(token, multipartBody, it) }
                     showToast(successResponse?.prediction?.result.toString())
                     Log.d(ContentValues.TAG, "test predict: ${successResponse?.prediction?.result?.penyakit.toString()}")
+
+                    val bundle = Bundle()
+
+// Menyimpan List<String> ke bundle
+                    bundle.putStringArrayList("penyakit", ArrayList(successResponse?.prediction?.result?.penyakit))
+                    bundle.putStringArrayList("penanganan", ArrayList(successResponse?.prediction?.result?.penanganan))
+                    bundle.putString("gambar", successResponse?.prediction?.imageUrl.toString())
+
+                    val fragmentTujuan = ResultFragment()
+                    fragmentTujuan.arguments = bundle
+
+                    fragmentManager?.beginTransaction()
+                        ?.replace(R.id.fragment_container2, fragmentTujuan)
+                        ?.commit()
 //                    successResponse.enqueue(object : Callback<PredictionResponse> {
 //                        override fun onResponse(
 //                            call: Call<PredictionResponse>,

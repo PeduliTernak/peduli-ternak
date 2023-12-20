@@ -39,7 +39,7 @@ class HistoryAdapter : ListAdapter<PredictionsItem, HistoryAdapter.MyViewHolder>
         fun bind(item: PredictionsItem) {
 
             Log.d(ContentValues.TAG, "bind: ${item}")
-            binding.tvItem.text = item.result
+            binding.tvItem.text = item.result?.penyakit.toString()
 //            binding.tvItem.text = "${user.login}"
 //
             Glide.with(binding.root.context)
