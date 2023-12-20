@@ -11,9 +11,9 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.example.peduliternak.R
 import com.example.peduliternak.databinding.ActivityDrawerBinding
+import com.example.peduliternak.view.fragment.Maps2Fragment
 import com.example.peduliternak.view.fragment.HistoryFragment
 import com.example.peduliternak.view.fragment.HomeFragment
-import com.example.peduliternak.view.fragment.MapsFragment
 import com.example.peduliternak.view.fragment.PredictFragment
 import com.example.peduliternak.view.fragment.ProfileFragment
 import com.google.android.material.navigation.NavigationView
@@ -40,7 +40,7 @@ class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         binding.bottomNavigation.setOnItemSelectedListener { item ->
             when(item.itemId){
                 R.id.bottom_home -> openFragment(HomeFragment())
-                R.id.bottom_maps -> openFragment(MapsFragment())
+                R.id.bottom_maps -> openFragment(Maps2Fragment())
                 R.id.bottom_scan -> openFragment(PredictFragment())
                 R.id.bottom_quiz -> openFragment(HistoryFragment())
                 R.id.bottom_profile -> openFragment(ProfileFragment())
@@ -59,7 +59,7 @@ class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId){
             R.id.bottom_home -> openFragment(HomeFragment())
-            R.id.bottom_maps -> openFragment(MapsFragment())
+            R.id.bottom_maps -> openFragment(Maps2Fragment())
             R.id.bottom_scan -> openFragment(PredictFragment())
             R.id.bottom_quiz -> openFragment(HistoryFragment())
             R.id.bottom_profile -> openFragment(ProfileFragment())

@@ -144,6 +144,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:backgroundTint="@color/yellow"
+        android:background="@drawable/rounded_corner"
         android:text="Daftar"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
@@ -157,6 +158,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginTop="16dp"
+
         android:text="atau"
         android:textColor="@color/white"
         android:textSize="16sp"
@@ -174,6 +176,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:backgroundTint="@color/yellow"
+        android:background="@drawable/rounded_corner"
         android:text="@string/login"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
