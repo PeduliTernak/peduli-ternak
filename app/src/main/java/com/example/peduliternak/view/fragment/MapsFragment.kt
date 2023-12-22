@@ -135,7 +135,10 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
         val tourismPlace = listOf(
             PuskeswanPlace("Puskeswan Depok", -7.7561207721766205, 110.41478891276145),
             PuskeswanPlace("Puskeswan Ngaglik", -7.688494126466912, 110.38854449723894),
-//            TourismPlace("Rabbit Town", -6.8668408, 107.608081),
+            PuskeswanPlace("Puskeswan Kasihan", -7.818326395411564, 110.38491562321275),
+            PuskeswanPlace("Puskeswan Berbah", -7.807326198499546, 110.44365762618537),
+            PuskeswanPlace("Puskeswan Gamping", -7.8066459173262315, 110.31285166254894),
+            PuskeswanPlace("Puskeswan Godean", -7.769909091979971, 110.29087900723992),
 //            TourismPlace("Alun-Alun Kota Bandung", -6.9218518, 107.6025294),
 //            TourismPlace("Orchid Forest Cikole", -6.780725, 107.637409),
         )

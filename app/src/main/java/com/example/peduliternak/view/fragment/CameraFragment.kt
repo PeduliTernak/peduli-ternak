@@ -19,6 +19,7 @@ import androidx.lifecycle.lifecycleScope
 import com.example.peduliternak.R
 import com.example.peduliternak.data.response.PredictResponse
 import com.example.peduliternak.data.retrofit.ApiConfig
+import com.example.peduliternak.data.retrofit.ApiService
 import com.example.peduliternak.databinding.FragmentCameraBinding
 import com.example.peduliternak.databinding.FragmentPredictBinding
 import com.example.peduliternak.view.ViewModelFactory
@@ -30,9 +31,14 @@ import com.google.gson.Gson
 import kotlinx.coroutines.launch
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MultipartBody
+import okhttp3.OkHttpClient
 import okhttp3.RequestBody.Companion.asRequestBody
 import okhttp3.RequestBody.Companion.toRequestBody
 import retrofit2.HttpException
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
+import java.util.concurrent.TimeoutException
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -145,9 +151,12 @@ class CameraFragment : Fragment() {
             lifecycleScope.launch {
                 try {
                     val apiService = ApiConfig.getApiService()
+
+                    //handling timeout
+                    // Set a timeout for the request
+
                     val successResponse =
                         requestBody?.let { apiService.uploadImage(token, multipartBody, it) }
-                    showToast(successResponse?.prediction?.result.toString())
                     Log.d(ContentValues.TAG, "test predict: ${successResponse?.prediction?.result?.penyakit.toString()}")
 
                     val bundle = Bundle()
@@ -184,6 +193,10 @@ class CameraFragment : Fragment() {
 //                        }
 //                    })
                     showLoading(false)
+                } catch (e: TimeoutException) {
+                    // Handle timeout exception
+                    showToast("Request timeout. Please check your internet connection.")
+                    showLoading(false)
                 } catch (e: HttpException) {
 //                    val errorBody = e.response()?.errorBody()?.string()
 //                    val errorResponse = Gson().fromJson(errorBody, PredictResponse::class.java)
@@ -199,6 +212,10 @@ class CameraFragment : Fragment() {
                         }
                     }
 
+                    showLoading(false)
+                } catch (e: Exception) {
+                    // Handle other exceptions
+                    showToast("An error occurred: ${e.message}")
                     showLoading(false)
                 }
             }

@@ -1,6 +1,7 @@
 package com.example.peduliternak.view
 
 import android.content.ContentValues
+import android.text.TextUtils
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -39,12 +40,13 @@ class HistoryAdapter : ListAdapter<PredictionsItem, HistoryAdapter.MyViewHolder>
         fun bind(item: PredictionsItem) {
 
             Log.d(ContentValues.TAG, "bind: ${item}")
-            binding.tvItem.text = item.result?.penyakit.toString()
+//            binding.tvItem.text = item.result?.penyakit.toString()
 //            binding.tvItem.text = "${user.login}"
+            val allPenyakitItems: String? = item.result?.penyakit?.let { TextUtils.join(", ", it) }
+            binding.tvItem.text = allPenyakitItems.toString()
 //
             Glide.with(binding.root.context)
                 .load(item.imageUrl)
-                .circleCrop()
                 .into(binding.imgItemPhoto)
         }
     }
